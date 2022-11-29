@@ -10,7 +10,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>Cyclistic - Kevin Martin, Data Analyst</title>
-<meta name="description" content="In this case study, I assume the role of an analyst for a fictional company called Cyclistic based in Chicago. They provide a bike sharing service similar to Lime. My manager, the director of marketing, believes that the company’s future success depends on maximizing the number of annual memberships.">
+<meta name="description" content="Tableau, SQL. Google Data Analytics Capstone. Understand how casual riders and annual members use this fictional company differently. From these insights, we will design a new marketing strategy to convert casual riders into annual members.">
 
 
   <meta name="author" content="Kevin Martin">
@@ -26,7 +26,7 @@
 <meta property="og:url" content="http://localhost:4000/portfolio/cyclistic/">
 
 
-  <meta property="og:description" content="In this case study, I assume the role of an analyst for a fictional company called Cyclistic based in Chicago. They provide a bike sharing service similar to Lime. My manager, the director of marketing, believes that the company’s future success depends on maximizing the number of annual memberships.">
+  <meta property="og:description" content="Tableau, SQL. Google Data Analytics Capstone. Understand how casual riders and annual members use this fictional company differently. From these insights, we will design a new marketing strategy to convert casual riders into annual members.">
 
 
 
@@ -266,7 +266,7 @@
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="Cyclistic">
-    <meta itemprop="description" content="In this case study, I assume the role of an analyst for a fictional company called Cyclistic based in Chicago. They provide a bike sharing service similar to Lime. My manager, the director of marketing, believes that the company’s future success depends on maximizing the number of annual memberships.">
+    <meta itemprop="description" content="Tableau, SQL. Google Data Analytics Capstone. Understand how casual riders and annual members use this fictional company differently. From these insights, we will design a new marketing strategy to convert casual riders into annual members.">
     <meta itemprop="datePublished" content="2022-11-27T00:00:00-08:00">
     
 
@@ -303,19 +303,29 @@
 
       <section class="page__content e-content" itemprop="text">
         
-        <p>In this case study, I assume the role of an analyst for a fictional company called Cyclistic based in Chicago. They provide a bike sharing service similar to Lime. My manager, the director of marketing, believes that the company’s future success depends on maximizing the number of annual memberships.</p>
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#how-are-subscribers-different-from-casual-users">How are Subscribers different from Casual Users?</a></li><li><a href="#data-preparation-and-cleaning-details">Data Preparation and Cleaning Details</a></li><li><a href="#analysis">Analysis</a><ul><li><a href="#when-do-casual-users-ride">When do Casual Users ride?</a></li><li><a href="#how-long-do-casual-users-ride">How long do Casual Users ride?</a></li><li><a href="#what-kind-of-bikes-do-casual-users-ride">What kind of bikes do Casual Users ride?</a></li></ul></li><li><a href="#findings-riders-subscribe-to-commute">Findings: Riders subscribe to commute.</a><ul><li><a href="#subscribers-are-on-a-schedule">Subscribers are on a schedule.</a></li><li><a href="#subscribers-ride-quick-and-to-the-point-casual-users-stop-and-smell-the-roses">Subscribers ride quick and to the point, Casual Users stop and smell the roses</a></li><li><a href="#subscribers-ride-during-the-week-casual-users-ride-during-the-weekend">Subscribers ride during the week, Casual Users ride during the weekend</a></li></ul></li><li><a href="#conclusion-and-recommendations">Conclusion and Recommendations</a><ul><li><a href="#attract-commuters">Attract Commuters</a></li><li><a href="#entice-leisure-riders">Entice Leisure Riders</a></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <p>Tableau, SQL. Google Data Analytics Capstone. Understand how casual riders and annual members use this fictional company differently. From these insights, we will design a new marketing strategy to convert casual riders into annual members.</p>
 
 <!--more-->
 
-<h3 id="how-are-subscribers-different-from-casual-users">How are Subscribers different from Casual Users?</h3>
+<h1 id="how-are-subscribers-different-from-casual-users">How are Subscribers different from Casual Users?</h1>
 
-<p>My task is to understand how casual riders and annual members use Cyclistic bikes differently. From these insights, we will design a new marketing strategy to convert casual riders into annual members.</p>
+<p>In this case study, I assume the role of an analyst for a fictional company called Cyclistic based in Chicago. They provide a bike sharing service similar to Lime. My manager, the director of marketing, believes that the company’s future success depends on maximizing the number of annual memberships.</p>
 
-<h3 id="data-preparation-and-cleaning-details">Data Preparation and Cleaning Details</h3>
+<h1 id="data-preparation-and-cleaning-details">Data Preparation and Cleaning Details</h1>
 
-<p>I’m given access to a set of CSV files. They are organized by month, and have had all private user data stripped. <a href="cleaninglog.md">Here I’ve documented the steps I took to clean and process the data, included SQL queries.</a></p>
+<p>I’m given access to a set of CSV files. They are organized by month, and have had all private user data stripped. <a href="https://github.com/kdmartin518/Google_Data_Analytics_Capstone/blob/0c49f4c2e435bd90ea19e9035a3f6b55b526f351/cleaninglog.md">Here I’ve documented the steps I took to clean and process the data, included SQL queries.</a></p>
 
-<h3 id="when-do-casual-users-ride">When do Casual Users ride?</h3>
+<h1 id="analysis">Analysis</h1>
+
+<h2 id="when-do-casual-users-ride">When do Casual Users ride?</h2>
 
 <hr />
 
@@ -335,7 +345,7 @@
 
 <p>Casual Users typically make up less than 40% of rides during the week, but this shoots up to around 52% over the weekend.</p>
 
-<h3 id="how-long-do-casual-users-ride">How long do Casual Users ride?</h3>
+<h2 id="how-long-do-casual-users-ride">How long do Casual Users ride?</h2>
 
 <hr />
 
@@ -345,33 +355,31 @@
 
 <p>A large difference between the two groups is ride length. Casual Users tend to take longer rides, and the longest ride is a lot longer than the shortest. Compared to Subscribers, who usually stay within a tight range of relatively short rides.</p>
 
-<h3 id="what-kind-of-bikes-do-casual-users-ride">What kind of bikes do Casual Users ride?</h3>
+<h2 id="what-kind-of-bikes-do-casual-users-ride">What kind of bikes do Casual Users ride?</h2>
 
 <hr />
 
 <p><img src="/assets/cyclistic/figs/fig7.png" alt="Figure 7" /></p>
 
-<h1 id="cyclistic-is-for-getting-to-work">Cyclistic is for Getting to Work.</h1>
+<h1 id="findings-riders-subscribe-to-commute">Findings: Riders subscribe to commute.</h1>
 
 <hr />
 
-<h3 id="subscribers-ride-during-the-week-casual-users-ride-during-the-weekend">Subscribers ride during the week, Casual Users ride during the weekend</h3>
-
-<p>Subscriber use is steady over Mon-Fri and dips over the weekend. Casual Users are the opposite, and ride less during the week but peak over the weekend. However, there is a peak around 5 pm for Casual users, which suggests that a large portion of non-subscribers use the bikes to return home from work.</p>
-
-<h3 id="subscribers--commuters">Subscribers = Commuters</h3>
+<h2 id="subscribers-are-on-a-schedule">Subscribers are on a schedule.</h2>
 
 <p>Subscriber use peaks at 8 AM and 5 PM during the week, suggesting that they rely on bikes to get to and from work.</p>
 
-<h3 id="subscribers-ride-quick-and-to-the-point-casual-users-stop-and-smell-the-roses">Subscribers ride quick and to the point, Casual Users stop and smell the roses</h3>
+<h2 id="subscribers-ride-quick-and-to-the-point-casual-users-stop-and-smell-the-roses">Subscribers ride quick and to the point, Casual Users stop and smell the roses</h2>
 
 <p>Subscribers ride for 15 minutes on average, with very little deviation. Casual Users show a lot more variance from their shortest ride of 15 minutes to their longest of 30. This suggests that Subscribers take the same route consistently, that they were likely to subscribe because they lived near a route that only took 15 minutes, and that they aren’t interested in taking their time when they ride.</p>
 
-<h1 id="recommendations">Recommendations</h1>
+<h2 id="subscribers-ride-during-the-week-casual-users-ride-during-the-weekend">Subscribers ride during the week, Casual Users ride during the weekend</h2>
 
-<hr />
+<p>Subscriber use is steady over Mon-Fri and dips over the weekend. Casual Users are the opposite, and ride less during the week but peak over the weekend. However, there is a peak around 5 pm for Casual users, which suggests that a large portion of non-subscribers use the bikes to return home from work.</p>
 
-<h3 id="attract-commuters">Attract Commuters</h3>
+<h1 id="conclusion-and-recommendations">Conclusion and Recommendations</h1>
+
+<h2 id="attract-commuters">Attract Commuters</h2>
 
 <p>Cyclistic is apparently very useful for users who need our service to get to and from work every day. We can capitalize on this by:</p>
 
@@ -380,7 +388,7 @@
   <li>placing more bike stations at and within fifteen minutes of where people work.</li>
 </ol>
 
-<h3 id="entice-leisure-riders">Entice Leisure Riders</h3>
+<h2 id="entice-leisure-riders">Entice Leisure Riders</h2>
 
 <p>Plenty of people ride on the weekend but don’t think it’s worth it to subscribe. We can encourage these users by offering a annual “weekends only” pass at a lower rate.</p>
 
@@ -446,11 +454,11 @@
       
   <nav class="pagination">
     
-      <a href="#" class="pagination--pager disabled">Previous</a>
+      <a href="/portfolio/RPersonalFinance/" class="pagination--pager" title="RPersonalFinance
+">Previous</a>
     
     
-      <a href="/portfolio/rpersonalfinance-demo/" class="pagination--pager" title="RPersonalFinance
-">Next</a>
+      <a href="#" class="pagination--pager disabled">Next</a>
     
   </nav>
 
@@ -478,7 +486,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/portfolio/rpersonalfinance-demo/" rel="permalink">RPersonalFinance
+        <a href="/portfolio/RPersonalFinance/" rel="permalink">RPersonalFinance
 </a>
       
     </h2>
@@ -496,14 +504,14 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          3 minute read
+          6 minute read
         
       </span>
     
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">R, dplyr, ggplot. This set of custom R functions is designed to automatically process an arbitrary number of bank accounts and visualize their future balance...</p>
+    <p class="archive__item-excerpt" itemprop="description">R, dplyr, ggplot: This program helps the user manage their personal finances across many accounts by taking a set of simple budget data and predicting accoun...</p>
   </article>
 </div>
 

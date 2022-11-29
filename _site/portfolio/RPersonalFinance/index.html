@@ -10,7 +10,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>RPersonalFinance - Kevin Martin, Data Analyst</title>
-<meta name="description" content="R, dplyr, ggplot. This set of custom R functions is designed to automatically process an arbitrary number of bank accounts and visualize their future balances and transactions, based on a set of expected bills or transfers.">
+<meta name="description" content="R, dplyr, ggplot: This program helps the user manage their personal finances across many accounts by taking a set of simple budget data and predicting account balances into the future. This set of custom R functions is designed to automatically process an arbitrary number of bank accounts and visualize their future balances and transactions, based on a set of expected bills or transfers.">
 
 
   <meta name="author" content="Kevin Martin">
@@ -23,10 +23,10 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Kevin Martin, Data Analyst">
 <meta property="og:title" content="RPersonalFinance">
-<meta property="og:url" content="http://localhost:4000/portfolio/rpersonalfinance-demo/">
+<meta property="og:url" content="http://localhost:4000/portfolio/RPersonalFinance/">
 
 
-  <meta property="og:description" content="R, dplyr, ggplot. This set of custom R functions is designed to automatically process an arbitrary number of bank accounts and visualize their future balances and transactions, based on a set of expected bills or transfers.">
+  <meta property="og:description" content="R, dplyr, ggplot: This program helps the user manage their personal finances across many accounts by taking a set of simple budget data and predicting account balances into the future. This set of custom R functions is designed to automatically process an arbitrary number of bank accounts and visualize their future balances and transactions, based on a set of expected bills or transfers.">
 
 
 
@@ -36,14 +36,14 @@
 
 
 
-  <meta property="article:published_time" content="2022-11-27T00:00:00-08:00">
+  <meta property="article:published_time" content="2022-11-25T00:00:00-08:00">
 
 
 
 
 
 
-<link rel="canonical" href="http://localhost:4000/portfolio/rpersonalfinance-demo/">
+<link rel="canonical" href="http://localhost:4000/portfolio/RPersonalFinance/">
 
 
 
@@ -266,15 +266,15 @@
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="RPersonalFinance">
-    <meta itemprop="description" content="R, dplyr, ggplot. This set of custom R functions is designed to automatically process an arbitrary number of bank accounts and visualize their future balances and transactions, based on a set of expected bills or transfers.">
-    <meta itemprop="datePublished" content="2022-11-27T00:00:00-08:00">
+    <meta itemprop="description" content="R, dplyr, ggplot: This program helps the user manage their personal finances across many accounts by taking a set of simple budget data and predicting account balances into the future. This set of custom R functions is designed to automatically process an arbitrary number of bank accounts and visualize their future balances and transactions, based on a set of expected bills or transfers.">
+    <meta itemprop="datePublished" content="2022-11-25T00:00:00-08:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="http://localhost:4000/portfolio/rpersonalfinance-demo/" class="u-url" itemprop="url">RPersonalFinance
+            <a href="http://localhost:4000/portfolio/RPersonalFinance/" class="u-url" itemprop="url">RPersonalFinance
 </a>
           </h1>
           
@@ -291,7 +291,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          4 minute read
+          6 minute read
         
       </span>
     
@@ -303,48 +303,95 @@
 
       <section class="page__content e-content" itemprop="text">
         
-        <p>R, dplyr, ggplot. This set of custom R functions is designed to automatically process an arbitrary number of bank accounts and visualize their future balances and transactions, based on a set of expected bills or transfers.</p>
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#getting-started">Getting Started</a><ul><li><a href="#libraries-and-data-files">Libraries and Data Files</a></li></ul></li><li><a href="#creating-the-budget">Creating the budget</a></li><li><a href="#making-a-balance-sheet">Making a balance sheet</a><ul><li><a href="#create_balance_sheet">create_balance_sheet()</a></li><li><a href="#weekday-transactions">Weekday transactions</a></li></ul></li><li><a href="#predicting-overdrafts">Predicting overdrafts</a><ul><li><a href="#predict_max_overdraftbalance_sheet">predict_max_overdraft(balance_sheet)</a></li></ul></li><li><a href="#visualizing">Visualizing</a><ul><li><a href="#draw_balance_sheet">draw_balance_sheet()</a></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <p>R, dplyr, ggplot: This program helps the user manage their personal finances across many accounts by taking a set of simple budget data and predicting account balances into the future. This set of custom R functions is designed to automatically process an arbitrary number of bank accounts and visualize their future balances and transactions, based on a set of expected bills or transfers.</p>
 
 <!--more-->
 
-<p>If you are interested in the development side, I welcome you to dig through the code in the <a href="https://github.com/kdmartin518/RPersonalFinance">GitHub repository here.</a></p>
+<h1 id="getting-started">Getting Started</h1>
 
-<h2 id="premise">Premise</h2>
+<h2 id="libraries-and-data-files">Libraries and Data Files</h2>
 
-<p>This program helps the user manage their personal finances across many accounts by taking a set of simple budget data and predicting account balances into the future.</p>
+<p>Make sure to include the following libraries. You can explore them at the <a href="https://github.com/kdmartin518/RPersonalFinance">GitHub repo</a>.</p>
 
-<h2 id="format">Format</h2>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">)</span><span class="w">
+</span><span class="n">library</span><span class="p">(</span><span class="n">tidyr</span><span class="p">)</span><span class="w">
+</span><span class="n">library</span><span class="p">(</span><span class="n">lubridate</span><span class="p">)</span><span class="w"> 
+</span><span class="n">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span><span class="w">
 
-<p>Data is stored in three different CSVs, each for a different purpose:</p>
+</span><span class="n">source</span><span class="p">(</span><span class="s1">'source/constants.R'</span><span class="p">)</span><span class="w">
+</span><span class="n">source</span><span class="p">(</span><span class="s1">'source/importer_functions.R'</span><span class="p">)</span><span class="w">
+</span><span class="n">source</span><span class="p">(</span><span class="s1">'source/helper_functions.R'</span><span class="p">)</span><span class="w">
+</span><span class="n">source</span><span class="p">(</span><span class="s1">'source/user_functions.R'</span><span class="p">)</span></code></pre></figure>
 
-<p><em>bills.csv</em> keeps track of regular expenses for each bank account. <em>transfers.csv</em> keeps track of transfers occurring between bank accounts.</p>
+<p>Data is stored in three different CSV files under <a href="https://github.com/kdmartin518/RPersonalFinance/tree/master/data">/source</a>. Each is useful for different things.</p>
 
-<p>These are recorded by the day of month or day of week along with the total monthly amount.</p>
+<blockquote>
+  <ul>
+    <li>
+      <p><em>bills.csv</em> keeps track of regular expenses for each bank account.</p>
+    </li>
+    <li>
+      <p><em>transfers.csv</em> keeps track of transfers occurring between bank accounts.</p>
 
-<p><em>special.csv</em> keeps track of one-time transactions that occur on a specific date. This is useful to input a starting balance for a given month, or noting an annually-recurring bill.</p>
+      <ul>
+        <li><em>These are recorded by the day of month or day of week along with the total monthly amount.</em></li>
+      </ul>
+    </li>
+    <li>
+      <p><em>special.csv</em> keeps track of one-time transactions that occur on a specific date.</p>
 
-<h1 id="getting-started">Getting started</h1>
+      <ul>
+        <li><em>This is useful to input a starting balance for a given month, or noting an annually-recurring bill.</em></li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
 
-<p>Let’s start by importing the data and seeing what it looks like.</p>
+<h1 id="creating-the-budget">Creating the budget</h1>
+
+<p>My friends Alice and Bob wrote down their combined finances in a set of spreadsheeets. They wrote their names next to their bank accounts and a list of bills and transfers that they wanted to plan for.</p>
+
+<p>Alice converted the spreadsheets into CSV files. Let’s import them.</p>
 
 <figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">transaction_sheet</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">import_data</span><span class="p">(</span><span class="s1">'data/bills.csv'</span><span class="p">,</span><span class="s1">'data/transfers.csv'</span><span class="p">)</span><span class="w">
 </span><span class="n">special_sheet</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">import_special</span><span class="p">(</span><span class="s1">'data/special.csv'</span><span class="p">)</span></code></pre></figure>
 
-<p>You’re welcome to investigate these data frames yourself to see what’s inside. They are more or less the same as the CSVs, which is to say the budget lines for a bunch of bank accounts. We can review one account at a time by filtering:</p>
+<p>The budgets are in R in data frames. Now we can do whatever we want to analyse them.</p>
+
+<p>We can review one bank account account at a time by filtering:</p>
 
 <figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">filter</span><span class="p">(</span><span class="n">transaction_sheet</span><span class="p">,</span><span class="n">bank_account</span><span class="o">==</span><span class="s2">"Alice Primary"</span><span class="p">)</span></code></pre></figure>
 
-<figure class="highlight"><pre><code class="language-text" data-lang="text">## [1] bank_account   accountor      day            name           monthly_amount
-## &lt;0 rows&gt; (or 0-length row.names)</code></pre></figure>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">##     bank_account accountor day                name monthly_amount
+## 1  Alice Primary     Alice   5       Credit Card A            -77
+## 2  Alice Primary     Alice  11       Credit Card B            -30
+## 3  Alice Primary     Alice  20       Credit Card C            -30
+## 4  Alice Primary     Alice  22            Car Loan           -280
+## 5  Alice Primary     Alice  29    Credit Card Bill           -682
+## 6  Alice Primary     Alice  22  Joint Contribution           -650
+## 7  Alice Primary     Alice   7  Joint Contribution           -650
+## 8  Alice Primary     Alice   1 Coffee and Shopping           -500
+## 9  Alice Primary     Alice  15            Paycheck           1600
+## 10 Alice Primary     Alice  30            Paycheck           1600</code></pre></figure>
 
 <figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">filter</span><span class="p">(</span><span class="n">transaction_sheet</span><span class="p">,</span><span class="n">bank_account</span><span class="o">==</span><span class="s2">"Bob Primary"</span><span class="p">)</span></code></pre></figure>
 
-<figure class="highlight"><pre><code class="language-text" data-lang="text">## [1] bank_account   accountor      day            name           monthly_amount
-## &lt;0 rows&gt; (or 0-length row.names)</code></pre></figure>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">##   bank_account accountor     day               name monthly_amount
+## 1  Bob Primary       Bob  Friday   Credit Card Bill           -280
+## 2  Bob Primary       Bob Tuesday Joint Contribution           -900
+## 3  Bob Primary       Bob  Monday           Paycheck           1200</code></pre></figure>
 
 <p>Note that Bob’s budgets are scheduled by days of the week. Alice’s in comparison are scheduled by day of month. This will be important in a moment.</p>
 
-<h1 id="balance-sheets">Balance Sheets</h1>
+<h1 id="making-a-balance-sheet">Making a balance sheet</h1>
 
 <p>Now that we’ve imported our budgets, let’s turn them into a a set of balance sheets. A balance sheet looks like your bank statement. Here you’ll see the sum of transactions on each day of the month with a running tally at the end of the day on the side.</p>
 
@@ -352,36 +399,55 @@
 
 <p>Given a transaction sheet like the one we created earlier, create_balance_sheet() will create a set of balance sheets. It will automatically create one sheet for each bank account listed in the transaction sheet. It will create a balance sheet for as large a date range as your specify.</p>
 
-<p><em>Note: dates are given in Lubridate format.</em></p>
-
 <figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">from_date</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">mdy</span><span class="p">(</span><span class="s1">'11-01-2022'</span><span class="p">)</span><span class="w">
 </span><span class="n">to_date</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">mdy</span><span class="p">(</span><span class="s1">'12-1-2022'</span><span class="p">)</span><span class="w">
+</span><span class="n">balance_sheet</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">create_balance_sheet</span><span class="p">(</span><span class="n">transaction_sheet</span><span class="p">,</span><span class="n">from_date</span><span class="p">,</span><span class="n">to_date</span><span class="p">)</span></code></pre></figure>
 
-</span><span class="n">balance_sheet</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">create_balance_sheet</span><span class="p">(</span><span class="n">transaction_sheet</span><span class="p">,</span><span class="n">from_date</span><span class="p">,</span><span class="n">to_date</span><span class="p">)</span><span class="w">
-</span><span class="n">glimpse</span><span class="p">(</span><span class="n">balance_sheet</span><span class="p">)</span></code></pre></figure>
-
-<figure class="highlight"><pre><code class="language-text" data-lang="text">## Rows: 217
-## Columns: 4
-## $ date         &lt;date&gt; 2022-11-01, 2022-11-02, 2022-11-03, 2022-11-04, 2022-11-05, 2022-11-06, 2022-11-07, 2022-11-08, 2…
-## $ amount       &lt;dbl&gt; -150, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 682, 0, -15…
-## $ bank_account &lt;chr&gt; "Alysia Credit", "Alysia Credit", "Alysia Credit", "Alysia Credit", "Alysia Credit", "Alysia Credi…
-## $ balance      &lt;dbl&gt; -150, -150, -150, -150, -150, -150, -150, -150, -150, -150, -150, -150, -150, -150, -150, -150, -1…</code></pre></figure>
-
-<p>There are 251 rows. That’s 8 accounts * 31 days each. Let’s filter out to the accounts we care about right now.</p>
+<p>As it is, <em>balance_sheet</em> contains a couple hundred rows: A month of days from 11/1 ro 12/1 for each bank account in the transaction sheet. Let’s filter it out to a couple of individual accounts.</p>
 
 <figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">alice</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">filter</span><span class="p">(</span><span class="n">balance_sheet</span><span class="p">,</span><span class="n">bank_account</span><span class="o">==</span><span class="s2">"Alice Primary"</span><span class="p">)</span><span class="w">
-</span><span class="n">alice</span></code></pre></figure>
+</span><span class="n">bob</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">filter</span><span class="p">(</span><span class="n">balance_sheet</span><span class="p">,</span><span class="n">bank_account</span><span class="o">==</span><span class="s2">"Bob Primary"</span><span class="p">)</span><span class="w">
 
-<figure class="highlight"><pre><code class="language-text" data-lang="text">## # A tibble: 0 × 4
-## # … with 4 variables: date &lt;date&gt;, amount &lt;dbl&gt;, bank_account &lt;chr&gt;, balance &lt;dbl&gt;</code></pre></figure>
+</span><span class="n">head</span><span class="p">(</span><span class="n">alice</span><span class="p">,</span><span class="m">10</span><span class="p">)</span></code></pre></figure>
 
-<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">bob</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">filter</span><span class="p">(</span><span class="n">balance_sheet</span><span class="p">,</span><span class="n">bank_account</span><span class="o">==</span><span class="s2">"Bob Primary"</span><span class="p">)</span><span class="w">
-</span><span class="n">bob</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">## # A tibble: 10 × 4
+## # Groups:   bank_account [1]
+##    date       amount bank_account  balance
+##    &lt;date&gt;      &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;
+##  1 2022-11-01    929 Alice Primary     929
+##  2 2022-11-02      0 Alice Primary     929
+##  3 2022-11-03      0 Alice Primary     929
+##  4 2022-11-04      0 Alice Primary     929
+##  5 2022-11-05    -77 Alice Primary     852
+##  6 2022-11-06      0 Alice Primary     852
+##  7 2022-11-07   -650 Alice Primary     202
+##  8 2022-11-08      0 Alice Primary     202
+##  9 2022-11-09      0 Alice Primary     202
+## 10 2022-11-10      0 Alice Primary     202</code></pre></figure>
 
-<figure class="highlight"><pre><code class="language-text" data-lang="text">## # A tibble: 0 × 4
-## # … with 4 variables: date &lt;date&gt;, amount &lt;dbl&gt;, bank_account &lt;chr&gt;, balance &lt;dbl&gt;</code></pre></figure>
+<p>Here, each row represents the sum of all transactions on a given day, for Alice’s account.</p>
 
 <h2 id="weekday-transactions">Weekday transactions</h2>
+
+<p>Earlier I pointed out that Bob’s account has his transactions listed as occurring on days of the week. Here’s what his balance sheet looks like:</p>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">bob</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">## # A tibble: 31 × 4
+## # Groups:   bank_account [1]
+##    date       amount bank_account balance
+##    &lt;date&gt;      &lt;dbl&gt; &lt;chr&gt;          &lt;dbl&gt;
+##  1 2022-11-01   -107 Bob Primary     -107
+##  2 2022-11-02      0 Bob Primary     -107
+##  3 2022-11-03      0 Bob Primary     -107
+##  4 2022-11-04    -70 Bob Primary     -177
+##  5 2022-11-05      0 Bob Primary     -177
+##  6 2022-11-06      0 Bob Primary     -177
+##  7 2022-11-07    300 Bob Primary      123
+##  8 2022-11-08   -225 Bob Primary     -102
+##  9 2022-11-09      0 Bob Primary     -102
+## 10 2022-11-10      0 Bob Primary     -102
+## # … with 21 more rows</code></pre></figure>
 
 <p>Take a close look at Bob’s account. Notice how there’s a few repeating transactions, such as the -70 on 11/11, 11/18, 11/25, and so on. Notice also that 70 = 280/4, and 280 is the monthly value of Bob’s Credit Card Payment which recurs on Fridays.</p>
 
@@ -389,38 +455,36 @@
 
 <h1 id="predicting-overdrafts">Predicting overdrafts</h1>
 
+<p>Bob is worried that there won’t be enough in the joint bank account to cover a bill, but he isn’t sure how much will be in the acccount by the day it is due.</p>
+
 <h2 id="predict_max_overdraftbalance_sheet">predict_max_overdraft(balance_sheet)</h2>
 
-<p>This function is very useful. It will find the date and value of the balance furthest below 0 for each account in the sheet provided. See for yourself:</p>
+<p>This would be Bob’s fortune. It will find the future date of the most negative balance for each bank account in the sheet provided. See for yourself:</p>
 
 <figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">joint</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">filter</span><span class="p">(</span><span class="n">balance_sheet</span><span class="p">,</span><span class="n">bank_account</span><span class="o">==</span><span class="s2">"Joint Primary"</span><span class="p">)</span><span class="w">
 </span><span class="n">predict_max_overdraft</span><span class="p">(</span><span class="n">joint</span><span class="p">)</span></code></pre></figure>
 
-<figure class="highlight"><pre><code class="language-text" data-lang="text">##         date  balance  bank_account
-## 1 2022-12-01 -1728.55 Joint Primary</code></pre></figure>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">##         date balance  bank_account
+## 1 2022-11-06    -292 Joint Primary</code></pre></figure>
 
 <p>Keep in mind this doesn’t tell us when the first day the account will be overdrawn: But it does tell us that we need to move $517 in total to avoid a negative balance.</p>
 
 <h1 id="visualizing">Visualizing</h1>
 
+<p>Alice and bob would like to see a visualization of their future finances. It would help them to feel more confident that they can see it for themselves at a glance. Let’s make an easy way for them to see trends in their balance and expect upcoming bills.</p>
+
 <h2 id="draw_balance_sheet">draw_balance_sheet()</h2>
 
-<p>Finally, let’s visualize the data.</p>
-
-<p>By default this function displays transactions and overall balance in a chart, separated into different color groups by bank account. It’s a combination chart, with a line part representing the running balance and bars representing total transactions on a given day.</p>
-
-<p>It will display as many accounts for as wide a range of dates as you supply it, which can get messy fast.</p>
-
-<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">draw_balance_sheet</span><span class="p">(</span><span class="n">balance_sheet</span><span class="p">)</span></code></pre></figure>
-
-<p><img src="/assets/Rfig/unnamed-chunk-7-1.svg" alt="plot of chunk unnamed-chunk-7" /></p>
-
-<p>So we might want to filter it down a little.</p>
+<p>Enter this function. It will automatically display a combination chart for each bank account in the provided balance sheet.
+This will look messy if we import the whole thing all at once. Let’s filter.</p>
 
 <figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">joint</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">filter</span><span class="p">(</span><span class="n">balance_sheet</span><span class="p">,</span><span class="w">
-                </span><span class="n">bank_account</span><span class="o">==</span><span class="s1">'Joint Primary'</span><span class="p">,</span><span class="w">
-                </span><span class="n">between</span><span class="p">(</span><span class="n">date</span><span class="p">,</span><span class="n">mdy</span><span class="p">(</span><span class="s1">'11-01-22'</span><span class="p">),</span><span class="n">mdy</span><span class="p">(</span><span class="s1">'11-30-22'</span><span class="p">))</span><span class="w">
+                </span><span class="n">bank_account</span><span class="o">==</span><span class="s1">'Joint Primary'</span><span class="o">|</span><span class="n">bank_account</span><span class="o">==</span><span class="s1">'Alice Primary'</span><span class="p">,</span><span class="w">
+                </span><span class="n">between</span><span class="p">(</span><span class="n">date</span><span class="p">,</span><span class="w">
+                  </span><span class="n">mdy</span><span class="p">(</span><span class="s1">'11-01-22'</span><span class="p">),</span><span class="w">
+                  </span><span class="n">mdy</span><span class="p">(</span><span class="s1">'11-30-22'</span><span class="p">))</span><span class="w">
                 </span><span class="p">)</span><span class="w">
+</span><span class="n">source</span><span class="p">(</span><span class="s1">'source/user_functions.R'</span><span class="p">)</span><span class="w">
 </span><span class="n">draw_balance_sheet</span><span class="p">(</span><span class="n">joint</span><span class="p">)</span></code></pre></figure>
 
 <p><img src="/assets/Rfig/unnamed-chunk-8-1.svg" alt="plot of chunk unnamed-chunk-8" /></p>
@@ -433,8 +497,9 @@
                 </span><span class="p">)</span><span class="w">
 </span><span class="n">draw_balance_sheet</span><span class="p">(</span><span class="n">joint</span><span class="p">)</span></code></pre></figure>
 
-<p><img src="/assets/Rfig/unnamed-chunk-9-1.svg" alt="plot of chunk unnamed-chunk-9" />
-So here we see what our account looks like around the date of the most negative balance. Looks like there’s a large deduction that day. We can get more details about that time range this way:</p>
+<p><img src="/assets/Rfig/unnamed-chunk-9-1.svg" alt="plot of chunk unnamed-chunk-9" /></p>
+
+<p>So here we see what our account looks like around the date of the most negative balance. Looks like there’s a large deduction that day. We can get more details about that time range this way:</p>
 
 <figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">overdraft</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">transaction_sheet</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> 
               </span><span class="n">filter</span><span class="p">(</span><span class="w">
@@ -444,10 +509,12 @@ So here we see what our account looks like around the date of the most negative 
               </span><span class="n">transmute</span><span class="p">(</span><span class="n">day</span><span class="p">,</span><span class="n">name</span><span class="p">,</span><span class="n">monthly_amount</span><span class="p">)</span><span class="w">
 </span><span class="n">overdraft</span></code></pre></figure>
 
-<figure class="highlight"><pre><code class="language-text" data-lang="text">##   day   name monthly_amount
-## 1   1  Fetch         -61.19
-## 2   4  Rent        -1220.95
-## 3   5 Avista         -75.26</code></pre></figure>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">##   day               name monthly_amount
+## 1   1              Fetch         -61.19
+## 2   4              Rent        -1720.95
+## 3   6   Electric Company        -100.00
+## 4   1       Pet Supplies        -208.00
+## 5   7 Joint Contribution         650.00</code></pre></figure>
 
 <p>Yep, so it looks like we are a little short for rent this month. But we know by exactly how much, so as long as we move $518 into Joint Primary by 11/4, we should be able to cover it!</p>
 
@@ -495,29 +562,29 @@ So here we see what our account looks like around the date of the most negative 
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2022-11-27T00:00:00-08:00">November 27, 2022</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2022-11-25T00:00:00-08:00">November 25, 2022</time></p>
 
       </footer>
 
       <section class="page__share">
   
 
-  <a href="https://twitter.com/intent/tweet?text=RPersonalFinance%20http%3A%2F%2Flocalhost%3A4000%2Fportfolio%2Frpersonalfinance-demo%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=RPersonalFinance%20http%3A%2F%2Flocalhost%3A4000%2Fportfolio%2FRPersonalFinance%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fportfolio%2Frpersonalfinance-demo%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fportfolio%2FRPersonalFinance%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fportfolio%2Frpersonalfinance-demo%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fportfolio%2FRPersonalFinance%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
+      <a href="#" class="pagination--pager disabled">Previous</a>
+    
+    
       <a href="/portfolio/cyclistic/" class="pagination--pager" title="Cyclistic
-">Previous</a>
-    
-    
-      <a href="#" class="pagination--pager disabled">Next</a>
+">Next</a>
     
   </nav>
 
@@ -563,14 +630,14 @@ So here we see what our account looks like around the date of the most negative 
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          2 minute read
+          3 minute read
         
       </span>
     
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">In this case study, I assume the role of an analyst for a fictional company called Cyclistic based in Chicago. They provide a bike sharing service similar to...</p>
+    <p class="archive__item-excerpt" itemprop="description">Tableau, SQL. Google Data Analytics Capstone. Understand how casual riders and annual members use this fictional company differently. From these insights, we...</p>
   </article>
 </div>
 
