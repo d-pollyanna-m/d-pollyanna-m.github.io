@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.2">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2022-11-28T16:11:17-08:00</updated><id>/feed.xml</id><title type="html">Kevin Martin, Data Analyst</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><author><name>Kevin Martin</name></author><entry><title type="html">Cyclistic</title><link href="/portfolio/cyclistic/" rel="alternate" type="text/html" title="Cyclistic" /><published>2022-11-27T00:00:00-08:00</published><updated>2022-11-27T00:00:00-08:00</updated><id>/portfolio/cyclistic</id><content type="html" xml:base="/portfolio/cyclistic/">&lt;p&gt;Tableau, SQL. Google Data Analytics Capstone. Understand how casual riders and annual members use this fictional company differently. From these insights, we will design a new marketing strategy to convert casual riders into annual members.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h1 id=&quot;how-are-subscribers-different-from-casual-users&quot;&gt;How are Subscribers different from Casual Users?&lt;/h1&gt;
+
+&lt;p&gt;In this case study, I assume the role of an analyst for a fictional company called Cyclistic based in Chicago. They provide a bike sharing service similar to Lime. My manager, the director of marketing, believes that the company’s future success depends on maximizing the number of annual memberships.&lt;/p&gt;
+
+&lt;h1 id=&quot;data-preparation-and-cleaning-details&quot;&gt;Data Preparation and Cleaning Details&lt;/h1&gt;
+
+&lt;p&gt;I’m given access to a set of CSV files. They are organized by month, and have had all private user data stripped. &lt;a href=&quot;https://github.com/kdmartin518/Google_Data_Analytics_Capstone/blob/0c49f4c2e435bd90ea19e9035a3f6b55b526f351/cleaninglog.md&quot;&gt;Here I’ve documented the steps I took to clean and process the data, included SQL queries.&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;analysis&quot;&gt;Analysis&lt;/h1&gt;
+
+&lt;h2 id=&quot;when-do-casual-users-ride&quot;&gt;When do Casual Users ride?&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/cyclistic/figs/fig1.png&quot; alt=&quot;Figure 1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;For reference, people take more rides overall in the Summer and fewer in the Winter. There are generally fewer Casual Users than Subscribers.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/cyclistic/figs/fig2.png&quot; alt=&quot;Figure 2&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Nearly 50% of all riders are Casual Users during the Summer months, but this drops to less than 20% in the Winter.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/cyclistic/figs/fig3.png&quot; alt=&quot;Figure 3&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;From day to day, Subscriber use peaks at 8 AM and 5 PM during the week. Casual users also peak around 5 PM.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/cyclistic/figs/fig4.png&quot; alt=&quot;Figure 4&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Casual Users typically make up less than 40% of rides during the week, but this shoots up to around 52% over the weekend.&lt;/p&gt;
+
+&lt;h2 id=&quot;how-long-do-casual-users-ride&quot;&gt;How long do Casual Users ride?&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/cyclistic/figs/fig5.png&quot; alt=&quot;Figure 5&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/cyclistic/figs/fig6.png&quot; alt=&quot;A comparison of longest and shortest rides, by day of week.&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;A large difference between the two groups is ride length. Casual Users tend to take longer rides, and the longest ride is a lot longer than the shortest. Compared to Subscribers, who usually stay within a tight range of relatively short rides.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-kind-of-bikes-do-casual-users-ride&quot;&gt;What kind of bikes do Casual Users ride?&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/cyclistic/figs/fig7.png&quot; alt=&quot;Figure 7&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;findings-riders-subscribe-to-commute&quot;&gt;Findings: Riders subscribe to commute.&lt;/h1&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;subscribers-are-on-a-schedule&quot;&gt;Subscribers are on a schedule.&lt;/h2&gt;
+
+&lt;p&gt;Subscriber use peaks at 8 AM and 5 PM during the week, suggesting that they rely on bikes to get to and from work.&lt;/p&gt;
+
+&lt;h2 id=&quot;subscribers-ride-quick-and-to-the-point-casual-users-stop-and-smell-the-roses&quot;&gt;Subscribers ride quick and to the point, Casual Users stop and smell the roses&lt;/h2&gt;
+
+&lt;p&gt;Subscribers ride for 15 minutes on average, with very little deviation. Casual Users show a lot more variance from their shortest ride of 15 minutes to their longest of 30. This suggests that Subscribers take the same route consistently, that they were likely to subscribe because they lived near a route that only took 15 minutes, and that they aren’t interested in taking their time when they ride.&lt;/p&gt;
+
+&lt;h2 id=&quot;subscribers-ride-during-the-week-casual-users-ride-during-the-weekend&quot;&gt;Subscribers ride during the week, Casual Users ride during the weekend&lt;/h2&gt;
+
+&lt;p&gt;Subscriber use is steady over Mon-Fri and dips over the weekend. Casual Users are the opposite, and ride less during the week but peak over the weekend. However, there is a peak around 5 pm for Casual users, which suggests that a large portion of non-subscribers use the bikes to return home from work.&lt;/p&gt;
+
+&lt;h1 id=&quot;conclusion-and-recommendations&quot;&gt;Conclusion and Recommendations&lt;/h1&gt;
+
+&lt;h2 id=&quot;attract-commuters&quot;&gt;Attract Commuters&lt;/h2&gt;
+
+&lt;p&gt;Cyclistic is apparently very useful for users who need our service to get to and from work every day. We can capitalize on this by:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Marketing ourselves as a service for commuters and promote the benefits of holding an annual subscription.&lt;/li&gt;
+  &lt;li&gt;placing more bike stations at and within fifteen minutes of where people work.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;entice-leisure-riders&quot;&gt;Entice Leisure Riders&lt;/h2&gt;
+
+&lt;p&gt;Plenty of people ride on the weekend but don’t think it’s worth it to subscribe. We can encourage these users by offering a annual “weekends only” pass at a lower rate.&lt;/p&gt;</content><author><name>Kevin Martin</name></author><category term="portfolio" /><category term="casestudy" /><category term="sql" /><category term="tableau" /><summary type="html">Tableau, SQL. Google Data Analytics Capstone. Understand how casual riders and annual members use this fictional company differently. From these insights, we will design a new marketing strategy to convert casual riders into annual members.</summary></entry><entry><title type="html">RPersonalFinance</title><link href="/portfolio/RPersonalFinance/" rel="alternate" type="text/html" title="RPersonalFinance" /><published>2022-11-25T00:00:00-08:00</published><updated>2022-11-25T00:00:00-08:00</updated><id>/portfolio/RPersonalFinance</id><content type="html" xml:base="/portfolio/RPersonalFinance/">&lt;p&gt;R, dplyr, ggplot: This program helps the user manage their personal finances across many accounts by taking a set of simple budget data and predicting account balances into the future. This set of custom R functions is designed to automatically process an arbitrary number of bank accounts and visualize their future balances and transactions, based on a set of expected bills or transfers.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h1 id=&quot;getting-started&quot;&gt;Getting Started&lt;/h1&gt;
+
+&lt;h2 id=&quot;libraries-and-data-files&quot;&gt;Libraries and Data Files&lt;/h2&gt;
+
+&lt;p&gt;Make sure to include the following libraries. You can explore them at the &lt;a href=&quot;https://github.com/kdmartin518/RPersonalFinance&quot;&gt;GitHub repo&lt;/a&gt;.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;n&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tidyverse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tidyr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lubridate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; 
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ggplot2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;source&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;source/constants.R&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;source&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;source/importer_functions.R&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;source&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;source/helper_functions.R&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;source&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;source/user_functions.R&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Data is stored in three different CSV files under &lt;a href=&quot;https://github.com/kdmartin518/RPersonalFinance/tree/master/data&quot;&gt;/source&lt;/a&gt;. Each is useful for different things.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;
+      &lt;p&gt;&lt;em&gt;bills.csv&lt;/em&gt; keeps track of regular expenses for each bank account.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;&lt;em&gt;transfers.csv&lt;/em&gt; keeps track of transfers occurring between bank accounts.&lt;/p&gt;
+
+      &lt;ul&gt;
+        &lt;li&gt;&lt;em&gt;These are recorded by the day of month or day of week along with the total monthly amount.&lt;/em&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;&lt;em&gt;special.csv&lt;/em&gt; keeps track of one-time transactions that occur on a specific date.&lt;/p&gt;
+
+      &lt;ul&gt;
+        &lt;li&gt;&lt;em&gt;This is useful to input a starting balance for a given month, or noting an annually-recurring bill.&lt;/em&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&quot;creating-the-budget&quot;&gt;Creating the budget&lt;/h1&gt;
+
+&lt;p&gt;My friends Alice and Bob wrote down their combined finances in a set of spreadsheeets. They wrote their names next to their bank accounts and a list of bills and transfers that they wanted to plan for.&lt;/p&gt;
+
+&lt;p&gt;Alice converted the spreadsheets into CSV files. Let’s import them.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;n&quot;&gt;transaction_sheet&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;import_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;data/bills.csv&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;data/transfers.csv&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;special_sheet&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;import_special&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;data/special.csv&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;The budgets are in R in data frames. Now we can do whatever we want to analyse them.&lt;/p&gt;
+
+&lt;p&gt;We can review one bank account account at a time by filtering:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;n&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;transaction_sheet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bank_account&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Alice Primary&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;##     bank_account accountor day                name monthly_amount
+## 1  Alice Primary     Alice   5       Credit Card A            -77
+## 2  Alice Primary     Alice  11       Credit Card B            -30
+## 3  Alice Primary     Alice  20       Credit Card C            -30
+## 4  Alice Primary     Alice  22            Car Loan           -280
+## 5  Alice Primary     Alice  29    Credit Card Bill           -682
+## 6  Alice Primary     Alice  22  Joint Contribution           -650
+## 7  Alice Primary     Alice   7  Joint Contribution           -650
+## 8  Alice Primary     Alice   1 Coffee and Shopping           -500
+## 9  Alice Primary     Alice  15            Paycheck           1600
+## 10 Alice Primary     Alice  30            Paycheck           1600&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;n&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;transaction_sheet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bank_account&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Bob Primary&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;##   bank_account accountor     day               name monthly_amount
+## 1  Bob Primary       Bob  Friday   Credit Card Bill           -280
+## 2  Bob Primary       Bob Tuesday Joint Contribution           -900
+## 3  Bob Primary       Bob  Monday           Paycheck           1200&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Note that Bob’s budgets are scheduled by days of the week. Alice’s in comparison are scheduled by day of month. This will be important in a moment.&lt;/p&gt;
+
+&lt;h1 id=&quot;making-a-balance-sheet&quot;&gt;Making a balance sheet&lt;/h1&gt;
+
+&lt;p&gt;Now that we’ve imported our budgets, let’s turn them into a a set of balance sheets. A balance sheet looks like your bank statement. Here you’ll see the sum of transactions on each day of the month with a running tally at the end of the day on the side.&lt;/p&gt;
+
+&lt;h2 id=&quot;create_balance_sheet&quot;&gt;create_balance_sheet()&lt;/h2&gt;
+
+&lt;p&gt;Given a transaction sheet like the one we created earlier, create_balance_sheet() will create a set of balance sheets. It will automatically create one sheet for each bank account listed in the transaction sheet. It will create a balance sheet for as large a date range as your specify.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;n&quot;&gt;from_date&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mdy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;11-01-2022&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;to_date&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mdy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;12-1-2022&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;balance_sheet&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;create_balance_sheet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;transaction_sheet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;from_date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;to_date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;As it is, &lt;em&gt;balance_sheet&lt;/em&gt; contains a couple hundred rows: A month of days from 11/1 ro 12/1 for each bank account in the transaction sheet. Let’s filter it out to a couple of individual accounts.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;n&quot;&gt;alice&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;balance_sheet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bank_account&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Alice Primary&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bob&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;balance_sheet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bank_account&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Bob Primary&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;alice&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## # A tibble: 10 × 4
+## # Groups:   bank_account [1]
+##    date       amount bank_account  balance
+##    &amp;lt;date&amp;gt;      &amp;lt;dbl&amp;gt; &amp;lt;chr&amp;gt;           &amp;lt;dbl&amp;gt;
+##  1 2022-11-01    929 Alice Primary     929
+##  2 2022-11-02      0 Alice Primary     929
+##  3 2022-11-03      0 Alice Primary     929
+##  4 2022-11-04      0 Alice Primary     929
+##  5 2022-11-05    -77 Alice Primary     852
+##  6 2022-11-06      0 Alice Primary     852
+##  7 2022-11-07   -650 Alice Primary     202
+##  8 2022-11-08      0 Alice Primary     202
+##  9 2022-11-09      0 Alice Primary     202
+## 10 2022-11-10      0 Alice Primary     202&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Here, each row represents the sum of all transactions on a given day, for Alice’s account.&lt;/p&gt;
+
+&lt;h2 id=&quot;weekday-transactions&quot;&gt;Weekday transactions&lt;/h2&gt;
+
+&lt;p&gt;Earlier I pointed out that Bob’s account has his transactions listed as occurring on days of the week. Here’s what his balance sheet looks like:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;n&quot;&gt;bob&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## # A tibble: 31 × 4
+## # Groups:   bank_account [1]
+##    date       amount bank_account balance
+##    &amp;lt;date&amp;gt;      &amp;lt;dbl&amp;gt; &amp;lt;chr&amp;gt;          &amp;lt;dbl&amp;gt;
+##  1 2022-11-01   -107 Bob Primary     -107
+##  2 2022-11-02      0 Bob Primary     -107
+##  3 2022-11-03      0 Bob Primary     -107
+##  4 2022-11-04    -70 Bob Primary     -177
+##  5 2022-11-05      0 Bob Primary     -177
+##  6 2022-11-06      0 Bob Primary     -177
+##  7 2022-11-07    300 Bob Primary      123
+##  8 2022-11-08   -225 Bob Primary     -102
+##  9 2022-11-09      0 Bob Primary     -102
+## 10 2022-11-10      0 Bob Primary     -102
+## # … with 21 more rows&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Take a close look at Bob’s account. Notice how there’s a few repeating transactions, such as the -70 on 11/11, 11/18, 11/25, and so on. Notice also that 70 = 280/4, and 280 is the monthly value of Bob’s Credit Card Payment which recurs on Fridays.&lt;/p&gt;
+
+&lt;p&gt;If a bill is listed as occurring on a named weekday, it will be automatically split up onto all of that weekday in the month, at 1/4 of the monthly value.&lt;/p&gt;
+
+&lt;h1 id=&quot;predicting-overdrafts&quot;&gt;Predicting overdrafts&lt;/h1&gt;
+
+&lt;p&gt;Bob is worried that there won’t be enough in the joint bank account to cover a bill, but he isn’t sure how much will be in the acccount by the day it is due.&lt;/p&gt;
+
+&lt;h2 id=&quot;predict_max_overdraftbalance_sheet&quot;&gt;predict_max_overdraft(balance_sheet)&lt;/h2&gt;
+
+&lt;p&gt;This would be Bob’s fortune. It will find the future date of the most negative balance for each bank account in the sheet provided. See for yourself:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;n&quot;&gt;joint&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;balance_sheet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bank_account&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Joint Primary&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;predict_max_overdraft&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;joint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;##         date balance  bank_account
+## 1 2022-11-06    -292 Joint Primary&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Keep in mind this doesn’t tell us when the first day the account will be overdrawn: But it does tell us that we need to move $517 in total to avoid a negative balance.&lt;/p&gt;
+
+&lt;h1 id=&quot;visualizing&quot;&gt;Visualizing&lt;/h1&gt;
+
+&lt;p&gt;Alice and bob would like to see a visualization of their future finances. It would help them to feel more confident that they can see it for themselves at a glance. Let’s make an easy way for them to see trends in their balance and expect upcoming bills.&lt;/p&gt;
+
+&lt;h2 id=&quot;draw_balance_sheet&quot;&gt;draw_balance_sheet()&lt;/h2&gt;
+
+&lt;p&gt;Enter this function. It will automatically display a combination chart for each bank account in the provided balance sheet.
+This will look messy if we import the whole thing all at once. Let’s filter.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;n&quot;&gt;joint&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;balance_sheet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bank_account&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;Joint Primary&apos;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bank_account&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;Alice Primary&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;between&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                  &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mdy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;11-01-22&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                  &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mdy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;11-30-22&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;source&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;source/user_functions.R&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;draw_balance_sheet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;joint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/Rfig/unnamed-chunk-8-1.svg&quot; alt=&quot;plot of chunk unnamed-chunk-8&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;By the way, we can use this to analyze that overdraft we found out about earlier. Let’s zoom in to just that week.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;n&quot;&gt;joint&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;balance_sheet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bank_account&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;Joint Primary&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;between&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mdy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;11-01-22&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mdy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;11-8-22&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;draw_balance_sheet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;joint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/Rfig/unnamed-chunk-9-1.svg&quot; alt=&quot;plot of chunk unnamed-chunk-9&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;So here we see what our account looks like around the date of the most negative balance. Looks like there’s a large deduction that day. We can get more details about that time range this way:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;n&quot;&gt;overdraft&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;transaction_sheet&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; 
+              &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                     &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bank_account&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Joint Primary&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                     &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;between&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;day&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+              &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;transmute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;day&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;monthly_amount&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;overdraft&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;##   day               name monthly_amount
+## 1   1              Fetch         -61.19
+## 2   4              Rent        -1720.95
+## 3   6   Electric Company        -100.00
+## 4   1       Pet Supplies        -208.00
+## 5   7 Joint Contribution         650.00&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Yep, so it looks like we are a little short for rent this month. But we know by exactly how much, so as long as we move $518 into Joint Primary by 11/4, we should be able to cover it!&lt;/p&gt;</content><author><name>Kevin Martin</name></author><category term="portfolio" /><category term="R" /><category term="ggplot" /><category term="dplyr" /><summary type="html">R, dplyr, ggplot: This program helps the user manage their personal finances across many accounts by taking a set of simple budget data and predicting account balances into the future. This set of custom R functions is designed to automatically process an arbitrary number of bank accounts and visualize their future balances and transactions, based on a set of expected bills or transfers.</summary></entry></feed>
